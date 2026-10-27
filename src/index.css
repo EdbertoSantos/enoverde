@@ -5,13 +5,27 @@
   box-sizing: border-box;
 }
 
-html,
-body,
-#root {
-  width: 100%;
+html {
+  min-width: 320px;
   min-height: 100%;
+  background: #10251a;
 }
 
 body {
-  font-family: Arial, sans-serif;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'Aclonica', sans-serif;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible {
+  outline: 3px solid #d1e8c3;
+  outline-offset: 4px;
+}
+
+#root {
+  min-height: 100vh;
 }

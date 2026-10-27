@@ -1,0 +1,323 @@
+.missao2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 70px 5% 90px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #21150e;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+.missao2__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(25, 13, 7, 0.58);
+    pointer-events: none;
+}
+
+.missao2__inicio {
+    position: absolute;
+    z-index: 3;
+    top: 20px;
+    left: 24px;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.missao2__cabecalho {
+    position: absolute;
+    top: 28px;
+    right: 5%;
+    left: 8%;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    color: transparent;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.missao2__decisao,
+.missao2__feedback,
+.missao2__aprendizado {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 1150px);
+}
+
+.missao2__decisao {
+    box-sizing: border-box;
+    padding: 30px;
+    border: 2px solid #c07733;
+    border-radius: 22px;
+    background: rgba(55, 28, 12, 0.97);
+    color: #fff;
+}
+
+.missao2__decisao h1,
+.missao2__resultado h1 {
+    color: #f0bd80;
+    font-family: 'Aclonica', sans-serif;
+    text-align: center;
+}
+
+.missao2__contexto {
+    max-width: 900px;
+    margin: 20px auto;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.missao2__pergunta {
+    max-width: 850px;
+    margin: 24px auto;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.7;
+}
+
+.missao2__alternativas {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.missao2__alternativa {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 18px 20px;
+    border: 2px solid #c07733;
+    border-radius: 16px;
+    background: #492613;
+    color: #fff;
+    font: inherit;
+    line-height: 1.6;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.missao2__alternativa:hover {
+    transform: translateY(-2px);
+    background: #633719;
+}
+
+.missao2__alternativa--selecionada {
+    border-color: #ffe0a8;
+    background: #75421d;
+    box-shadow: 0 0 0 2px rgba(255, 224, 168, 0.2);
+}
+
+.missao2__alternativa strong {
+    flex-shrink: 0;
+    color: #f0bd80;
+}
+
+/* Feedback — mesmo padrão da Missão 01 */
+
+.missao2__feedback {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 65vh;
+}
+
+.missao2__resultado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 24px;
+    color: #fff;
+}
+
+.missao2__resultado h1 {
+    margin: 14px 0;
+}
+
+.missao2__dialogo {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 160px;
+    padding: 28px 280px 28px 32px;
+    border: 2px solid #4a2b17;
+    border-bottom: 7px solid #c07733;
+    border-radius: 16px;
+    background: #371c0c;
+    color: #fff;
+    font-weight: 600;
+    line-height: 1.8;
+    margin-top: 43.3vh;
+}
+
+.missao2__dialogo p {
+    margin: 0;
+}
+
+.missao2__helena {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    z-index: 2;
+    width: clamp(180px, 24vw, 300px);
+    max-height: 48vh;
+    object-fit: contain;
+    object-position: bottom;
+    pointer-events: none;
+}
+
+/* Cartões de aprendizagem */
+
+.missao2__aprendizado {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    gap: 24px;
+}
+
+.missao2__cartao {
+    min-height: 240px;
+    box-sizing: border-box;
+    padding: 28px;
+    border: 2px solid #c07733;
+    border-radius: 20px;
+    background: #fff;
+    color: #444;
+    line-height: 1.8;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.missao2__cartao h2 {
+    margin-top: 0;
+    color: #a85e24;
+    font-family: 'Aclonica', sans-serif;
+    text-align: center;
+}
+
+.missao2__progresso {
+    position: absolute;
+    z-index: 3;
+    bottom: 26px;
+    left: 28px;
+    color: transparent;
+    font-size: 0.9rem;
+}
+
+.missao2__botao {
+    position: absolute;
+    right: 28px;
+    bottom: 20px;
+    z-index: 4;
+    padding: 15px 24px;
+    border: 1px solid #d18a48;
+    border-radius: 12px;
+    background: #622904;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.missao2__botao:hover:not(:disabled) {
+    background: #7a370b;
+    transform: translateY(-2px);
+}
+
+.missao2__botao:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+}
+
+/* Tablets e celulares */
+
+@media (max-width: 700px) {
+    .missao2 {
+        justify-content: flex-start;
+        min-height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 100px 5% 100px;
+    }
+
+    .missao2__cabecalho {
+        flex-direction: column;
+        gap: 5px;
+        font-size: 0.75rem;
+    }
+
+    .missao2__decisao {
+        padding: 20px 14px;
+    }
+
+    .missao2__decisao h1 {
+        font-size: 1.25rem;
+    }
+
+    .missao2__alternativa {
+        padding: 14px 12px;
+        font-size: 0.82rem;
+    }
+
+    .missao2__feedback {
+        min-height: 55vh;
+    }
+
+    .missao2__dialogo {
+        min-height: 190px;
+        padding: 20px 110px 20px 18px;
+        font-size: 0.85rem;
+    }
+
+    .missao2__helena {
+        right: 0;
+        width: 125px;
+        max-height: 220px;
+    }
+
+    .missao2__aprendizado {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .missao2__cartao {
+        min-height: auto;
+        padding: 22px;
+        font-size: 0.9rem;
+    }
+
+    .missao2__progresso {
+        position: fixed;
+        bottom: 16px;
+        left: 12px;
+        font-size: 0.7rem;
+    }
+
+    .missao2__botao {
+        position: fixed;
+        right: 12px;
+        bottom: 10px;
+        max-width: 70%;
+        padding: 12px 14px;
+        font-size: 0.8rem;
+    }
+}

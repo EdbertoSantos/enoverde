@@ -1,0 +1,461 @@
+.tela-inicial {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #07060f;
+}
+
+.tela-inicial__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.cena-inicial {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: min(90%, 1200px);
+    min-height: 500px;
+    gap: 40px;
+}
+
+.cena-inicial__conteudo {
+    display: flex;
+    flex: 1;
+    gap: 18px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cena-inicial__titulo {
+    margin: 0;
+    color: #1e5411;
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    font-weight: 800;
+    text-shadow:
+        -1.5px -1.5px 0 #ffffff,
+        1.5px -1.5px 0 #ffffff,
+        -1.5px 1.5px 0 #ffffff,
+        1.5px 1.5px 0 #ffffff;
+}
+
+.cena-inicial__subtitulo {
+    margin: 0;
+    color: #f2d6b8;
+    font-size: clamp(1.1rem, 2.2vw, 1.8rem);
+    line-height: 1.5;
+}
+
+.cena-inicial__botao {
+    margin-top: 18px;
+    padding: 18px 28px 17px;
+    border: 1px solid #c07733;
+    border-radius: 12px;
+    background: #622904;
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(192, 119, 51, 0.25);
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+    z-index: 1000;
+}
+
+.cena-inicial__botao:hover {
+    transform: translateY(-3px);
+    background: #7a370b;
+    box-shadow: 0 10px 28px rgba(192, 119, 51, 0.4);
+}
+
+.cena-inicial__personagem {
+    display: flex;
+    flex: 0 1 42%;
+    align-items: flex-end;
+    justify-content: center;
+    align-self: stretch;
+    min-width: 0;
+}
+
+.cena-inicial__personagem img {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: 650px;
+    object-fit: contain;
+    object-position: bottom center;
+    transform: scaleX(-1);
+    --tamanho-helena: 4;
+    scale: var(--tamanho-helena);
+    transform-origin: bottom center;
+    translate: 0 50vh;
+}
+
+/* Adaptação para celulares: tela inicial */
+
+@media (max-width: 700px) {
+    .cena-inicial {
+        width: 90%;
+        min-height: auto;
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 48px;
+    }
+
+    .cena-inicial__conteudo {
+        align-items: center;
+        text-align: center;
+    }
+
+    .cena-inicial__personagem {
+        flex: 0 1 auto;
+        width: 100%;
+        max-height: 42vh;
+    }
+}
+
+/* ================================
+   Segunda tela: jornada
+================================ */
+
+.cena-jornada {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.card-jornada {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    width: min(80%, 760px);
+    padding: 36px 28px 35px;
+    box-sizing: border-box;
+    border: 1vh solid #c07733;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.card-jornada__titulo {
+    margin: 0;
+    color: #c07733;
+    font-family: 'Aclonica', sans-serif;
+    font-size: clamp(1.7rem, 4vw, 2.8rem);
+    line-height: 1.3;
+}
+
+.card-jornada__informacoes {
+    line-height: 1.8;
+}
+
+.card-jornada__informacoes li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 30vw;
+    min-height: 2.5vh;
+    margin-bottom: 1.5vh;
+    padding: 8px 12px;
+    border-radius: 50px;
+    background: #c07733;
+    color: #ffffff;
+    list-style: none;
+    text-align: center;
+}
+
+.card-jornada__informacoes span {
+    margin: 0 8px;
+    color: #c07733;
+}
+
+.cena-jornada__botao {
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+    z-index: 2;
+    margin-top: 0;
+}
+
+@media (max-width: 700px) {
+    .card-jornada {
+        width: 90%;
+        padding: 28px 20px;
+    }
+
+    .card-jornada__informacoes li {
+        width: 65vw;
+    }
+
+    .card-jornada__informacoes span {
+        margin: 0 4px;
+    }
+
+    .cena-jornada__botao {
+        right: 18px;
+        bottom: 18px;
+    }
+}
+
+/* ================================
+   Terceira tela: introdução
+================================ */
+
+.cena-introducao {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min(92%, 1150px);
+    box-sizing: border-box;
+    padding: 4vh 0 3vh;
+}
+
+.cena-introducao__kicker {
+    margin-bottom: 2vh;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+}
+
+.painel-introducao {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    width: 100%;
+    padding: 24px;
+    box-sizing: border-box;
+    border: 2px solid #c07733;
+    border-radius: 24px;
+    background: rgba(55, 28, 12, 0.96);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.cartao-desafio,
+.cartao-como-jogar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 26px 22px;
+    border: 2px solid;
+    border-radius: 18px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.cartao-desafio {
+    border-color: #c07733;
+    background: #ffffff;
+    color: #4a2b17;
+}
+
+.cartao-como-jogar {
+    border-color: #ffffff;
+    background: #c07733;
+    color: #ffffff;
+}
+
+.cartao-desafio h2,
+.cartao-como-jogar h2 {
+    margin: 0 0 18px;
+    font-family: 'Aclonica', sans-serif;
+    font-size: clamp(1.25rem, 2.2vw, 1.8rem);
+    text-align: center;
+}
+
+.cartao-desafio h2 {
+    color: #c07733;
+}
+
+.cartao-como-jogar h2 {
+    color: #ffffff;
+}
+
+.cartao-desafio p {
+    margin: 0 0 20px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.cartao-desafio ul,
+.cartao-como-jogar ol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cartao-desafio li,
+.cartao-como-jogar li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 42px;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.cartao-desafio li {
+    background: #c07733;
+    color: #ffffff;
+}
+
+.cartao-como-jogar li {
+    background: #ffffff;
+    color: #8b4c1c;
+}
+
+.como-jogar__espaco {
+    min-height: 30px;
+}
+
+/* Caixa de diálogo */
+
+.dialogo-cena {
+    position: relative;
+    width: 100%;
+    margin-top: 24px;
+    overflow: visible;
+}
+
+.dialogo-introducao {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 190px;
+    padding: 24px 260px 24px 28px;
+    box-sizing: border-box;
+    border: 2px solid #4a2b17;
+    border-bottom: 7px solid #c07733;
+    border-radius: 16px;
+    background: #371c0c;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    line-height: 1.8;
+}
+
+.dialogo-introducao p {
+    margin: 0;
+}
+
+/* Helena aparece na posição final quando o texto muda */
+
+.helena-introducao {
+    position: absolute;
+    right: 12px;
+    bottom: 7px;
+    z-index: 2;
+    width: clamp(160px, 21vw, 250px);
+    pointer-events: none;
+}
+
+.helena-introducao img {
+    display: block;
+    width: 100%;
+    max-height: 260px;
+    object-fit: contain;
+    object-position: bottom;
+}
+
+.helena-introducao__pensando {
+    position: absolute;
+    top: 4%;
+    left: -8%;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Botão da introdução */
+
+.introducao__botao {
+    align-self: flex-start;
+    margin-top: 16px;
+    margin-bottom: 12px;
+}
+
+/* Responsividade da introdução */
+
+@media (max-width: 700px) {
+    .cena-introducao {
+        width: 92%;
+        padding-top: 24px;
+        padding-bottom: 40px;
+    }
+
+    .painel-introducao {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 14px;
+    }
+
+    .cartao-desafio,
+    .cartao-como-jogar {
+        padding: 22px 16px;
+    }
+
+    .cartao-desafio li,
+    .cartao-como-jogar li {
+        min-height: 40px;
+    }
+
+    .dialogo-cena {
+        margin-top: 20px;
+    }
+
+    .dialogo-introducao {
+        min-height: 180px;
+        padding: 18px 135px 18px 16px;
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .helena-introducao {
+        right: 4px;
+        width: 135px;
+    }
+
+    .helena-introducao img {
+        max-height: 200px;
+    }
+
+    .introducao__botao {
+        align-self: center;
+    }
+}
